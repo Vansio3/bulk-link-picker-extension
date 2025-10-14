@@ -1,0 +1,27 @@
+#selection-box {
+  position: absolute;
+  border: 2px dashed #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+  z-index: 9999;
+  /* Prevent the box from interfering with mouse events */
+  pointer-events: none;
+}
+
+#link-counter {
+  position: absolute;
+  background-color: #007bff;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  z-index: 10000;
+  /* Offset the counter slightly inside the top-left corner */
+  transform: translate(5px, 5px);
+  /* Prevent the counter from interfering with mouse events */
+  pointer-events: none;
+}
+
+a.link-opened-by-extension {
+  color: #a072c8 !important; /* A typical purple for visited links */
+  text-decoration: underline !important;
+}
