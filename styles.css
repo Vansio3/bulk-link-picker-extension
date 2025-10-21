@@ -15,8 +15,8 @@
   border-radius: 3px;
   font-size: 12px;
   z-index: 10000;
-  /* Offset the counter slightly inside the top-left corner */
-  transform: translate(5px, 5px);
+  /* Offset the counter slightly to the bottom-right of the cursor */
+  transform: translate(-20px, -20px);
   /* Prevent the counter from interfering with mouse events */
   pointer-events: none;
 }

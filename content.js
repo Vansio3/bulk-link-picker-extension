@@ -75,8 +75,8 @@ function onMouseMove(e) {
     selectionBox.style.width = `${Math.abs(width)}px`;
     selectionBox.style.height = `${Math.abs(height)}px`;
 
-    linkCounter.style.left = `${newLeft}px`;
-    linkCounter.style.top = `${newTop}px`;
+    linkCounter.style.left = `${e.pageX}px`;
+    linkCounter.style.top = `${e.pageY}px`;
 
     updateLinkCounterAndStyle();
   }
