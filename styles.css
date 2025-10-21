@@ -27,6 +27,5 @@ a.link-opened-by-extension {
 }
 
 a.link-being-selected {
-    color: #FFBF00 !important;
     text-decoration: underline !important;
 }
