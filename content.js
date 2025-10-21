@@ -117,7 +117,14 @@ function getLinksInSelection() {
 
   links.forEach(link => {
     const linkRect = link.getBoundingClientRect();
-    if (link.href && linkRect.right > rect.left && linkRect.left < rect.right && linkRect.bottom > rect.top && linkRect.top < rect.bottom) {
+    if (
+      link.href &&
+      linkRect.right > rect.left &&
+      linkRect.left < rect.right &&
+      linkRect.bottom > rect.top &&
+      linkRect.top < rect.bottom &&
+      link.innerText.trim() !== ''
+    ) {
       selectedLinks.push(link);
     }
   });
