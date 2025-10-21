@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Multi-Link Opener",
-  "version": "1.2",
+  "version": "1.0",
   "description": "Press Shift and draw a box to open multiple links at once.",
   "permissions": [
     "tabs"
