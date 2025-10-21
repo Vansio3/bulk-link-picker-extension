@@ -5,6 +5,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     });
   } else if (request.action === 'updateBadge') {
     chrome.action.setBadgeText({ text: request.count });
-    chrome.action.setBadgeBackgroundColor({ color: '#007bff' });
+    chrome.action.setBadgeBackgroundColor({ color: '#FFBF00' });
   }
 });
