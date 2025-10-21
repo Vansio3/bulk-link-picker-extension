@@ -1,6 +1,7 @@
 let isShiftPressed = false;
 let isDragging = false;
 let startX, startY;
+let underlinedLinks = [];
 
 const selectionBox = document.createElement('div');
 selectionBox.id = 'selection-box';
@@ -77,7 +78,7 @@ function onMouseMove(e) {
     linkCounter.style.left = `${newLeft}px`;
     linkCounter.style.top = `${newTop}px`;
 
-    updateLinkCounter();
+    updateLinkCounterAndStyle();
   }
 }
 
@@ -123,13 +124,33 @@ function getLinksInSelection() {
   return selectedLinks;
 }
 
-function updateLinkCounter() {
-  // To avoid duplicate URLs from the same link element, we use a Set.
-  const uniqueUrls = new Set(getLinksInSelection().map(link => link.href));
+function updateLinkCounterAndStyle() {
+  const currentLinksInSelection = getLinksInSelection();
+  const currentLinkSet = new Set(currentLinksInSelection);
+  const underlinedLinkSet = new Set(underlinedLinks);
+
+  // Remove underline from links that are no longer selected
+  for (const link of underlinedLinks) {
+    if (!currentLinkSet.has(link)) {
+      link.classList.remove('link-being-selected');
+    }
+  }
+
+  // Add underline to new links in selection
+  for (const link of currentLinksInSelection) {
+    if (!underlinedLinkSet.has(link)) {
+      link.classList.add('link-being-selected');
+    }
+  }
+
+  underlinedLinks = currentLinksInSelection;
+
+  const uniqueUrls = new Set(currentLinksInSelection.map(link => link.href));
   const count = uniqueUrls.size;
   linkCounter.textContent = count;
   chrome.runtime.sendMessage({ action: 'updateBadge', count: count > 0 ? count.toString() : '' }).catch(() => {});
 }
+
 
 function cleanUpDOM() {
   if (document.body.contains(selectionBox)) {
@@ -138,4 +159,8 @@ function cleanUpDOM() {
   if (document.body.contains(linkCounter)) {
     document.body.removeChild(linkCounter);
   }
+   underlinedLinks.forEach(link => {
+    link.classList.remove('link-being-selected');
+  });
+  underlinedLinks = [];
 }

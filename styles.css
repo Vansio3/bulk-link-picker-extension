@@ -25,3 +25,8 @@ a.link-opened-by-extension {
   color: #a072c8 !important; /* A typical purple for visited links */
   text-decoration: underline !important;
 }
+
+a.link-being-selected {
+    color: #c7a900 !important;
+    text-decoration: underline !important;
+}
