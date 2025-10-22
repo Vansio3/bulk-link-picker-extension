@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Multi-Link Opener",
+  "name": "Bulk Link Picker",
   "version": "1.0",
   "description": "Press Shift and draw a box to open multiple links at once.",
   "permissions": [
