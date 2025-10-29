@@ -18,3 +18,4 @@ Multi-Link Opener is a Chrome extension that allows you to open multiple links a
 *   **Duplicate Prevention**: If you select the same link multiple times, it will only be opened once.
 *   **Visited Indicator**: Opened links are styled with a purple color, just like standard visited links, so you know which ones you've already opened with the extension.
 *   **Badge Counter**: The extension icon will display a badge with the number of links currently selected.
+*   **Staggered Tab Opening**: Opens tabs sequentially with a slight delay to prevent browser freezing when opening many links at once.
