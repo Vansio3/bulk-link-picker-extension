@@ -3,6 +3,7 @@
   "name": "Bulk Link Picker",
   "version": "1.0",
   "description": "Press Shift and draw a box to open multiple links at once.",
+  "homepage_url": "https://sites.google.com/view/bulklinkpicker",
   "permissions": [
     "tabs"
   ],
